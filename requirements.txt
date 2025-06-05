@@ -1,0 +1,7 @@
+flask
+tensorflow==2.13.0
+pillow
+numpy
+opencv-python
+streamlit
+keras
