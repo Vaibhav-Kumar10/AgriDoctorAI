@@ -1,7 +1,6 @@
-flask
+streamlit
 tensorflow==2.13.0
+keras
 pillow
 numpy
 opencv-python
-streamlit
-keras
