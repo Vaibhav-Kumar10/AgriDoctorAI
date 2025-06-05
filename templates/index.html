@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AgriDoctorAI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body class="container text-center mt-5">
+    <h1 class="text-success">🌿 AgriDoctorAI</h1>
+    <p>Upload a leaf image to detect the plant disease</p>
+
+    <form method="POST" enctype="multipart/form-data" class="my-4">
+        <input type="file" name="image" class="form-control mb-3" required>
+        <button type="submit" class="btn btn-success">Detect Disease</button>
+    </form>
+
+    {% if prediction %}
+    <div class="card p-3 mt-4">
+        <h4 class="text-primary">Prediction: {{ prediction }}</h4>
+        <h5>Confidence: {{ (confidence * 100) | round(2) }}%</h5>
+        <img src="{{ img_path }}" class="img-fluid mt-3" alt="Leaf Image">
+        <p class="mt-2"><strong>Treatment Suggestion:</strong> {{ treatment }}</p>
+    </div>
+    {% endif %}
+</body>
+
+</html>
